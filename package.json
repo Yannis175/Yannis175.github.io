@@ -1,0 +1,18 @@
+{
+  "name": "yannis175-github-io-tests",
+  "version": "1.0.0",
+  "description": "Comprehensive test suite for Yannis175.github.io README.md",
+  "scripts": {
+    "test": "npm run test:validation && npm run test:links && npm run test:integration",
+    "test:validation": "node tests/readme.test.js",
+    "test:links": "node tests/readme-links.test.js",
+    "test:integration": "node tests/readme-integration.test.js",
+    "test:all": "./tests/run-all-tests.sh"
+  },
+  "keywords": ["test", "validation", "documentation", "markdown"],
+  "author": "Test Suite Generator",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
