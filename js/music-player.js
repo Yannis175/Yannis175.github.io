@@ -168,6 +168,11 @@
     dom.playlist.style.display = playlistVisible ? 'block' : 'none';
   }
 
+  function closePlaylist() {
+    playlistVisible = false;
+    dom.playlist.style.display = 'none';
+  }
+
   function renderPlaylist() {
     var ul = dom.playlistItems;
     ul.innerHTML = '';
@@ -389,6 +394,13 @@
       setVolume(parseInt(this.value));
     });
     dom.listBtn.addEventListener('click', togglePlaylist);
+
+    // Close playlist when clicking outside the player
+    document.addEventListener('click', function (e) {
+      if (playlistVisible && !player.contains(e.target)) {
+        closePlaylist();
+      }
+    });
 
     // Audio events
     audio.addEventListener('timeupdate', updateProgress);

@@ -177,11 +177,18 @@
    ======================================== */
 
 .music-playlist {
+  position: absolute;
+  bottom: 100%;
+  right: 16px;
+  width: 320px;
   max-height: 240px;
   overflow-y: auto;
-  border-top: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
   background: #fafafa;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .music-playlist-items {
@@ -256,7 +263,8 @@
 
 .dark-theme .music-playlist {
   background: #252628;
-  border-top-color: #3a3b3d;
+  border-color: #3a3b3d;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .dark-theme .music-playlist-items li {
@@ -309,5 +317,9 @@
 
   .music-playlist {
     max-height: 200px;
+    width: auto;
+    left: 8px;
+    right: 8px;
+    border-radius: 6px 6px 0 0;
   }
 }
