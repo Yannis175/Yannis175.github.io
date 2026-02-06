@@ -243,6 +243,7 @@ a:hover {
   text-align: center;
   line-height: 4rem;
   padding-top: 2em;
+  padding-bottom: 70px;
 }
 @charset "utf-8";
 
@@ -1214,6 +1215,7 @@ header label {
     text-align: center;
     line-height: 1.5rem;
     padding-top: 2em;
+    padding-bottom: 60px;
   }
   .post-warp {
     padding-top: 6em;
