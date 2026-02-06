@@ -1,0 +1,313 @@
+/* ========================================
+   Music Player - Base Styles
+   ======================================== */
+
+.music-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+}
+
+.music-player.hidden {
+  display: none;
+}
+
+/* ========================================
+   Progress Bar
+   ======================================== */
+
+.music-progress-wrap {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.music-progress-wrap:hover {
+  height: 6px;
+}
+
+.music-progress-bar {
+  width: 100%;
+  height: 100%;
+  background: #e0e0e0;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.music-progress-current {
+  height: 100%;
+  background: #2d96bd;
+  width: 0%;
+  position: relative;
+  transition: width 0.1s linear;
+}
+
+/* ========================================
+   Controls Layout
+   ======================================== */
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  height: 52px;
+  box-sizing: border-box;
+}
+
+/* Song Info */
+.music-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.music-title {
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-artist {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+/* Buttons */
+.music-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.music-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  color: #555;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+  line-height: 1;
+}
+
+.music-btn:hover {
+  color: #2d96bd;
+  background: rgba(45, 150, 189, 0.1);
+}
+
+.music-play {
+  font-size: 22px;
+}
+
+/* Right Section */
+.music-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.music-time {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.2s ease;
+}
+
+/* Volume */
+.music-volume-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.music-volume {
+  width: 80px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e0e0e0;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.music-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2d96bd;
+  cursor: pointer;
+}
+
+.music-volume::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2d96bd;
+  cursor: pointer;
+  border: none;
+}
+
+/* ========================================
+   Playlist Panel
+   ======================================== */
+
+.music-playlist {
+  max-height: 240px;
+  overflow-y: auto;
+  border-top: 1px solid #e0e0e0;
+  background: #fafafa;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.music-playlist-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.music-playlist-items li {
+  padding: 10px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.music-playlist-items li:hover {
+  background: #f0f0f0;
+}
+
+.music-playlist-items li.active {
+  color: #2d96bd;
+  font-weight: 600;
+}
+
+.music-playlist-items li .playlist-title {
+  font-size: 13px;
+}
+
+.music-playlist-items li .playlist-artist {
+  font-size: 11px;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+/* ========================================
+   Dark Theme
+   ======================================== */
+
+.dark-theme .music-player {
+  background: #1e1f21;
+  border-top-color: #3a3b3d;
+  color: #a9a9b3;
+}
+
+.dark-theme .music-artist {
+  color: #6b6b73;
+}
+
+.dark-theme .music-btn {
+  color: #a9a9b3;
+}
+
+.dark-theme .music-btn:hover {
+  color: #fff;
+  background: rgba(45, 150, 189, 0.15);
+}
+
+.dark-theme .music-time {
+  color: #6b6b73;
+}
+
+.dark-theme .music-progress-bar {
+  background: #3a3b3d;
+}
+
+.dark-theme .music-volume {
+  background: #3a3b3d;
+}
+
+.dark-theme .music-playlist {
+  background: #252628;
+  border-top-color: #3a3b3d;
+}
+
+.dark-theme .music-playlist-items li {
+  border-bottom-color: #3a3b3d;
+}
+
+.dark-theme .music-playlist-items li:hover {
+  background: #2e2f31;
+}
+
+.dark-theme .music-playlist-items li .playlist-artist {
+  color: #6b6b73;
+}
+
+/* ========================================
+   Responsive - Mobile
+   ======================================== */
+
+@media (max-width: 768px) {
+  .music-controls {
+    padding: 6px 12px;
+    height: 46px;
+  }
+
+  .music-info {
+    min-width: 80px;
+    max-width: 120px;
+  }
+
+  .music-title {
+    font-size: 12px;
+  }
+
+  .music-time {
+    display: none;
+  }
+
+  .music-volume-wrap {
+    display: none;
+  }
+
+  .music-btn {
+    font-size: 16px;
+    padding: 4px 6px;
+  }
+
+  .music-play {
+    font-size: 20px;
+  }
+
+  .music-playlist {
+    max-height: 200px;
+  }
+}

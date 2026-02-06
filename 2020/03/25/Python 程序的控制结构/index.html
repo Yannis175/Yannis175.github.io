@@ -45,6 +45,7 @@
     
 
 
+    <link rel="stylesheet" href="/css/music-player.css">
 </head>
 <body>
     <div class="wrapper">
@@ -435,5 +436,38 @@
 </footer>
 
     </div>
+<!-- Music Player -->
+<div id="music-player" class="music-player">
+  <div class="music-player-bar">
+    <div class="music-progress-wrap">
+      <div class="music-progress-bar">
+        <div class="music-progress-current"></div>
+      </div>
+    </div>
+    <div class="music-controls">
+      <div class="music-info">
+        <span class="music-title">未选择歌曲</span>
+        <span class="music-artist"></span>
+      </div>
+      <div class="music-buttons">
+        <button class="music-btn music-prev" title="上一首">⏮</button>
+        <button class="music-btn music-play" title="播放">▶</button>
+        <button class="music-btn music-next" title="下一首">⏭</button>
+      </div>
+      <div class="music-right">
+        <span class="music-time">0:00 / 0:00</span>
+        <div class="music-volume-wrap">
+          <button class="music-btn music-mute" title="静音">🔊</button>
+          <input type="range" class="music-volume" min="0" max="100" value="80">
+        </div>
+        <button class="music-btn music-list-btn" title="歌曲列表">☰</button>
+      </div>
+    </div>
+  </div>
+  <div class="music-playlist" style="display:none;">
+    <ul class="music-playlist-items"></ul>
+  </div>
+</div>
+<script src="/js/music-player.js"></script>
 </body>
 </html>
